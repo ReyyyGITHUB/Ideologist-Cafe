@@ -5,11 +5,11 @@
    DESIGN TOKENS – IDEOLOGIST
    ========================= */
 :root {
-  /* ===== Fonts ===== */
+  /* Fonts */
   --font-heading: 'DM Serif Display', serif;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  /* ===== Brand ===== */
+  /* Brand */
   --primary: #3B2F2F;
   --primary-hover: #2A2121;
   --primary-soft: #4A3A3A;
@@ -18,57 +18,54 @@
   --secondary-hover: #B08C59;
   --secondary-soft: #E7D3B0;
 
-  /* ===== Background ===== */
+  /* Background */
   --bg-main: #0F0F0F;
   --bg-surface: #151515;
   --bg-soft: #1C1C1C;
 
-  /* ===== Text ===== */
+  /* Text */
   --text-primary: #F5F5F5;
   --text-secondary: #CFCFCF;
   --text-muted: #9CA3AF;
   --text-inverse: #111111;
 
-  /* ===== Border ===== */
+  /* Border */
   --border-main: #262626;
   --border-soft: #1F1F1F;
   --border-accent: #3B2F2F;
 
-  /* ===== State ===== */
+  /* State */
   --success: #4ADE80;
   --warning: #FACC15;
   --error: #F87171;
 
-  /* ===== Radius ===== */
+  /* Radius */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
 
-  /* ===== Shadow ===== */
+  /* Shadow */
   --shadow-soft: 0 8px 24px rgba(0,0,0,.25);
 }
 
 /* =========================
-   BASE STYLES
+   BASE
    ========================= */
-html {
+html,
+body {
   background: var(--bg-main);
   color: var(--text-primary);
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-main);
-  color: var(--text-primary);
+  @apply antialiased;
 }
 
 /* =========================
    TYPOGRAPHY
    ========================= */
-h1,
-h2,
-h3,
-h4,
+h1, h2, h3, h4,
 .heading {
   font-family: var(--font-heading);
   color: var(--text-primary);
@@ -78,3 +75,54 @@ h4,
 p {
   color: var(--text-secondary);
 }
+
+/* =========================
+   SEMANTIC UTILITIES
+   ========================= */
+.bg-surface { background-color: var(--bg-surface); }
+.bg-secondary-soft { background-color: var(--secondary-soft); }
+.bg-soft { background-color: var(--bg-soft); }
+.border-main { border-color: var(--border-main); }
+.border-secondary { border-color: var(--secondary); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-brand { color: var(--primary); }
+.shadow-soft { box-shadow: var(--shadow-soft); }
+
+/* =========================
+   COMPONENT HELPERS
+   ========================= */
+.card-nav:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--secondary) 60%, transparent);
+}
+
+/* =========================
+   SEMANTIC UTILITIES (NO var() IN JSX)
+   ========================= */
+
+/* Background */
+.bg-main { background: var(--bg-main); }
+.bg-surface { background: var(--bg-surface); }
+.bg-soft { background: var(--bg-soft); }
+
+/* Text */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-inverse { color: var(--text-inverse); }
+
+/* Brand text/bg helpers */
+.text-brand { color: var(--primary); }
+.bg-brand { background: var(--primary); }
+.bg-brand-soft { background: var(--primary-soft); }
+.bg-accent { background: var(--secondary); }
+.bg-accent-soft { background: var(--secondary-soft); }
+
+/* Border */
+.border-main { border-color: var(--border-main); }
+.border-soft { border-color: var(--border-soft); }
+.border-accent { border-color: var(--border-accent); }
+
+/* Shadow */
+.shadow-soft { box-shadow: var(--shadow-soft); }
