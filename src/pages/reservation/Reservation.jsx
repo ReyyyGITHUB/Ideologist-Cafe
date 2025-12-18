@@ -1,7 +1,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 import Navbar from "../../components/ui/Navbar";
-import ReservationForm from "../../components/reservation/ReservationForm";
+import ReservationForm from "../../components/Reservation/ReservationForm";
 
 export default function Reservation() {
   return (
