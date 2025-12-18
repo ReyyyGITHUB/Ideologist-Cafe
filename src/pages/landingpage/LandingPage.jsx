@@ -1,12 +1,11 @@
 import React from "react";
-import { CalendarClock, BookOpenCheck, MapPin, ShoppingBag } from "lucide-react";
 import CardNavigation from "../../components/landingpage/CardNavigation";
 import OpenSign from "../../components/landingpage/OpenSign";
 import HeroTitle from "../../components/landingpage/HeroTitle";
 
 export default function LandingPage() {
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -38,28 +37,28 @@ export default function LandingPage() {
 
         {/* Card Nav Container*/}
         <div className="flex flex-col gap-1">
-          <div className="mt-8 flex w-full flex-row justify-between gap-2">
+          <div className="mt-8 flex w-full flex-row justify-center gap-2 md:gap-4">
             <CardNavigation
-              title={"Booking Meja"}
+              title={"Reservasi Meja"}
               subtitle={"Vip Room Tersedia"}
-              icon={CalendarClock}
+              to="reservation"
             />
             <CardNavigation
               title={"Lihat Menu"}
               subtitle={"Coffee, Food & Snack"}
-              icon={BookOpenCheck}
+              to="menu"
             />
           </div>
-          <div className="mt-8 flex w-full flex-row justify-between gap-2">
+          <div className="mt-8 flex w-full flex-row justify-center gap-2 mb-0 md:mb-32 md:gap-4">
             <CardNavigation
               title={"Lokasi & Rute"}
               subtitle={"Setiabudi, Semarang"}
-              icon={MapPin}
+              to="location"
             />
             <CardNavigation
-              title={"Order Online"}
-              subtitle={"Grabfood Tersedia"}
-              icon={ShoppingBag}
+              title={"Gallery"}
+              subtitle={"Lihat Galeri Kami"}
+              to="gallery"
             />
           </div>
         </div>
