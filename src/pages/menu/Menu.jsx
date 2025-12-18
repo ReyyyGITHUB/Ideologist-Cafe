@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/ui/Navbar";
 import MenuIntro from "../../components/menu/MenuIntro";
 import MenuPdfCard from "../../components/menu/MenuPdfCard";
@@ -13,7 +13,7 @@ export default function Menu() {
     "https://drive.google.com/uc?export=download&id=1hCAFdntheQC2KON9z3wCZG6ztGJGraPu";
   const bestSellerItems = [
     {
-      image: "",
+      image: "/assets/images/menu-bistik-sapi.png",
       title: "Gurame Bakar Ala Maari",
       price: "Rp 99.090",
       badge: "Signature",
@@ -22,7 +22,7 @@ export default function Menu() {
         "Gurame bakar khas Maari dengan bumbu rempah Nusantara, disajikan hangat dengan nasi dan sambal pilihan.",
     },
     {
-      image: "",
+      image: "/assets/images/menu-udang-maranggi.png",
       title: "Udang Bakar Bago Maranggi",
       price: "Rp 90.909",
       badge: "Chef Favorite",
@@ -31,7 +31,7 @@ export default function Menu() {
         "Udang segar dibakar dengan bumbu maranggi, rasa manis-gurih seimbang dengan aroma smokey.",
     },
     {
-      image: "",
+      image: "/assets/images/menu-ayam-mentega.png",
       title: "Ayam Saus Mentega",
       price: "Rp 50.000",
       badge: "",
@@ -40,7 +40,7 @@ export default function Menu() {
         "Ayam goreng renyah dengan saus mentega gurih dan irisan bawang, comfort food favorit semua umur.",
     },
     {
-      image: "",
+      image: "/assets/images/menu-cumi-telur-asin.png",
       title: "Cumi Saus Telur Asin",
       price: "Rp 66.363",
       badge: "Top Rated",
@@ -49,7 +49,7 @@ export default function Menu() {
         "Cumi goreng tepung disiram saus telur asin creamy dengan rasa gurih khas.",
     },
     {
-      image: "",
+      image: "/assets/images/menu-bistik-sapi.png",
       title: "Bistik Sapi Hotplate",
       price: "Rp 76.363",
       badge: "Hotplate",
@@ -58,13 +58,12 @@ export default function Menu() {
         "Daging sapi empuk disajikan panas di hotplate dengan saus khas dan sayuran pelengkap.",
     },
     {
-      image: "",
+      image: "/assets/images/menu-aren-latte.png",
       title: "Ideo Creamy Latte",
       price: "Rp 38.181",
       badge: "",
       badgeType: "",
-      description:
-        "Single shot expresso, creamy milk, home made syrup.",
+      description: "Single shot expresso, creamy milk, home made syrup.",
     },
   ];
 
@@ -95,6 +94,10 @@ export default function Menu() {
     },
   ];
 
+  const [activeCategory, setActiveCategory] = useState(
+    popularCategories[0]?.id || "seafood"
+  );
+
   return (
     <div className="min-h-dvh bg-main text-primary">
       <Navbar title="Menu" isFixed />
@@ -109,7 +112,8 @@ export default function Menu() {
 
         <PopularCategories
           categories={popularCategories}
-          active="seafood"
+          active={activeCategory}
+          onSelectCategory={setActiveCategory}
           pdfUrl={pdfViewUrl}
         />
 

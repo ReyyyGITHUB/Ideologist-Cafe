@@ -1,7 +1,10 @@
 import React from "react";
 import MenuCard from "./MenuCard";
 
-export default function BestSellerSection({ items = [], pdfUrl = "/assets/menu.pdf" }) {
+export default function BestSellerSection({
+  items = [],
+  pdfUrl = "/assets/menu.pdf",
+}) {
   return (
     <section className="flex flex-col gap-3">
       <div className="flex items-center justify-between">

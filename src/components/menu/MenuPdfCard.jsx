@@ -9,7 +9,7 @@ export default function MenuPdfCard({
     <section className="flex flex-col gap-3 rounded-2xl border border-main bg-surface p-4 shadow-soft">
       <div className="flex flex-col gap-1">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
-          Menu Lengkap (PDF)
+          Menu Lengkap - Ideologist Coffe (PDF)
         </p>
         <p className="text-sm text-secondary">
           Food &amp; Drinks - 1 file. Updated: 3 minggu lalu • 15.2 MB
