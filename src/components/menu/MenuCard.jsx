@@ -15,16 +15,18 @@ export default function MenuCard({
   badge,
   badgeType = "signature",
 }) {
-  const badgeClass = badge ? badgeStyles[badgeType] || badgeStyles.signature : "";
+  const badgeClass = badge
+    ? badgeStyles[badgeType] || badgeStyles.signature
+    : "";
+  const truncatedDescription =
+    description && description.length > 50
+      ? `${description.slice(0, 50)}...`
+      : description;
 
   return (
     <article className="relative overflow-hidden rounded-2xl border border-main bg-surface shadow-soft">
       <div className="relative h-48 w-full">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-        />
+        <img src={image} alt={title} className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         {badge ? (
           <span
@@ -38,7 +40,9 @@ export default function MenuCard({
       <div className="flex flex-col gap-2 p-4">
         <p className="text-lg font-semibold text-primary">{title}</p>
         {description ? (
-          <p className="text-xs leading-relaxed text-secondary">{description}</p>
+          <p className="text-xs leading-relaxed text-secondary">
+            {truncatedDescription}
+          </p>
         ) : null}
         <div className="mt-1 flex items-center justify-between">
           <p className="text-sm font-semibold text-emerald-300">{price}</p>

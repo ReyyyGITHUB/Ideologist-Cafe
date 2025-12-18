@@ -1,7 +1,7 @@
 import React from "react";
 import MenuCard from "./MenuCard";
 
-export default function BestSellerSection({ items = [] }) {
+export default function BestSellerSection({ items = [], pdfUrl = "/assets/menu.pdf" }) {
   return (
     <section className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
@@ -17,7 +17,7 @@ export default function BestSellerSection({ items = [] }) {
       </div>
       <div className="flex w-full justify-center">
         <a
-          href="/assets/menu.pdf"
+          href={pdfUrl}
           className="inline-flex items-center justify-center rounded-xl border border-secondary px-4 py-2 text-sm font-semibold text-primary transition hover:border-emerald-400 hover:text-emerald-200"
         >
           Lihat Menu Lengkap (PDF)

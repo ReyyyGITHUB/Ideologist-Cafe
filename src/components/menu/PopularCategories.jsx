@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function PopularCategories({ categories = [], active = "coffee" }) {
+export default function PopularCategories({
+  categories = [],
+  active = "coffee",
+  pdfUrl = "/assets/menu.pdf",
+}) {
   return (
     <section className="flex flex-col gap-3 rounded-2xl border border-main bg-surface p-4 shadow-soft">
       <div className="flex flex-wrap gap-2 overflow-x-auto">
@@ -41,7 +45,7 @@ export default function PopularCategories({ categories = [], active = "coffee" }
 
       <div className="flex justify-end">
         <a
-          href="/assets/menu.pdf"
+          href={pdfUrl}
           className="text-sm font-semibold text-emerald-300 hover:text-emerald-200"
         >
           Lihat semua di PDF →

@@ -14,17 +14,6 @@ export default function MenuIntro() {
           Temukan pilihan kopi, mocktail, dan bites favorit kami.
         </p>
       </div>
-
-      <div className="flex flex-col gap-2">
-        <label className="text-xs uppercase tracking-[0.1em] text-secondary">
-          Cari Menu (opsional)
-        </label>
-        <input
-          type="search"
-          placeholder="Search menu..."
-          className="w-full rounded-xl border border-main bg-soft px-3 py-2 text-primary placeholder:text-secondary focus:border-secondary focus:outline-none"
-        />
-      </div>
     </section>
   );
 }
